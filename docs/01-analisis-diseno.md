@@ -1,4 +1,4 @@
-# Fase 2
+# Fase-2
 # NOMBRES DE ESTUDIANTES
 | Nombre                                   | Usuario Github                | Rol       |
 |------------------------------------------|-------------------------------|-----------|
