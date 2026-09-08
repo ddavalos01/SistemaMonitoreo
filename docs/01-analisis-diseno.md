@@ -6,7 +6,6 @@
 | Fernando Rafael Lopez Vazquez  | flopez48                      | Estudiante B |
 | Fecha : 03 / Septiembre / 2027 |
 
-
 # Fase 2
 
 ## 1-Descripcion del problema
@@ -19,3 +18,15 @@ El nivel actual de liquido no puede ser menor que cero ni superar la capacidad m
 **Tanque:** Representa a cada uno de los tanques, incluyendo capacidad maxima, estado de operacion, etc. Debe almacenar la informacion relevante del tanque y poder mostrarla, y debe permitir modificar su estado.
 
 **Sensor:** Mide y almacena informacion sobre el nivel actual del tanque. Debe poder mandar esta informacion.
+
+## 3-Estado y comportamiento
+| Objeto propuesto | Responsabilidad                                                         | Informacion a conservar             | Comportamiento a realizar                         |
+|------------------|-------------------------------------------------------------------------|-------------------------------------|---------------------------------------------------|
+| Tanque           | El tanque debe de permitir conocer el nivel actual                      | Las mediciones de llenado o vaciado | Debe ser capaz de mandar la informacion requerida |
+| Sensor           | Los sesnores deben ser capaces de realizar las mediciones correctamente | Los limites de llenado y vaciado    | Compartir las mediciones que realizo              |
+
+## 4-Relaciones entre los objetos
+Para que el sistema pueda colaborar entre si debe de haber una buena comunicacion entre nuestros objetos, los cuales serian el tanque y los sesnores.
+Estos mismos dependen uno del otro ya que los sensores se encargan de medir los niveles del tanque, pero los sensores tambien necesitan estar en alguna posicion estrategica en el tanque para lograr
+una medicion correcta. Hay que tener en cuenta que en esta relacion depende uno del otro por el simple hecho que sin sensores no hay medicion y sin tanque no hay
+nada que medir por lo que las operaciones no deberian duplicarse si cada uno deberia de estar cumpliendo su funcion correctamente.
