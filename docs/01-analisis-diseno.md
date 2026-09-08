@@ -30,3 +30,11 @@ Para que el sistema pueda colaborar entre si debe de haber una buena comunicacio
 Estos mismos dependen uno del otro ya que los sensores se encargan de medir los niveles del tanque, pero los sensores tambien necesitan estar en alguna posicion estrategica en el tanque para lograr
 una medicion correcta. Hay que tener en cuenta que en esta relacion depende uno del otro por el simple hecho que sin sensores no hay medicion y sin tanque no hay
 nada que medir por lo que las operaciones no deberian duplicarse si cada uno deberia de estar cumpliendo su funcion correctamente.
+
+# Fase 3
+
+## 5-Diseño de clases
+| Clase  | Atributos propuestos                                                     | Tipo de dato                                    | Metodos propuetos            | Responsabilidad     |
+|--------|--------------------------------------------------------------------------|-------------------------------------------------|-----------------|---------------|
+| Tanque | -Identidicador <br/> -Capacidad maxima <br/> -Estado <br/> -Nivel actual | -String <br/> -Float <br/> -Entero <br/> -Float |
+| Sensor | -Identificador <br/> -Lectura de nivel                                   | -String <br/> -FLoat                            |
