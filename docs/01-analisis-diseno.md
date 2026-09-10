@@ -36,3 +36,7 @@ sensor registra y proporciona la información correspondiente al tanque al que e
 |--------|--------------------------------------------------------------------------|-------------------------------------------------|-----------------|---------------|
 | Tanque | -Identidicador <br/> -Capacidad maxima <br/> -Estado <br/> -Nivel actual | -private String <br/> -private Float <br/> -private Entero <br/> -private Float | getID() <br/> getLevel() <br/> getState() <br/> llenarTanque() <br/> vaciarTanque() <br/> detenerTanque() <br/> getCapacidadMax() <br/> getNivelPorcentaje() <br/> getResumen() | -Devolver el identificador del tanque <br/> -Devolver nivel actual del tanque <br/> -Devolver estado actual <br/> -Cambiar estado a llenando <br/> -Cambiar estado a vaciando <br/> -Cambiar estado a detenido <br/> -Devolver capacidad maxima del tanque <br/> -Devolver porcentaje de llenado <br/> -Mostrar resumen actual del tanque |
 | Sensor | -Identificador <br/> -Lectura de nivel                                   | -private String <br/> -private Float                            | getID() <br/> getLectura() | -Devolver identificador del sensor <br/> -Devolver lectura actual del sensor |
+
+## 6-Diagrama UML inicial
+
+<img width="1536" height="1024" alt="uml-inicial" src="https://github.com/user-attachments/assets/a1ad630f-1adc-4a2c-b585-030f1b5afb62" />
