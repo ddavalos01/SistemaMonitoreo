@@ -20,10 +20,10 @@ El nivel actual de liquido no puede ser menor que cero ni superar la capacidad m
 **Sensor:** Mide y almacena informacion sobre el nivel actual del tanque. Debe estar enlazado con el tanque del cual mide el nivel, y poder mandarle esta informacion.
 
 ## 3-Estado y comportamiento
-| Objeto propuesto | Responsabilidad                                                         | Informacion a conservar             | Comportamiento a realizar                         |
-|------------------|-------------------------------------------------------------------------|-------------------------------------|---------------------------------------------------|
-| Tanque           | El tanque debe de permitir conocer el nivel actual                      | Las mediciones de llenado o vaciado | Debe ser capaz de mandar la informacion requerida |
-| Sensor           | Los sesnores deben ser capaces de realizar las mediciones correctamente | Los limites de llenado y vaciado    | Compartir las mediciones que realizo              |
+| Objeto propuesto | Responsabilidad                                                         | Informacion a conservar                                                                                | Comportamiento a realizar                                                                                                  |
+|------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Tanque           | El tanque debe de permitir conocer el nivel actual                      | +Identificacion de tanque <br/> +Capacidad del tanque <br/> +Nivel del tanque <br/> +Estado del tanque | +Debe de ser capaz de almacenar informacion <br/> +Conectarse con el sensor <br/> +Mandar datos sobre el estado del tanque |
+| Sensor           | Los sesnores deben ser capaces de realizar las mediciones correctamente | +Identificacion del sensor <br/> +Lectura actual <br/> +Estado del sensor <br/>                        | +Compartir la correcta medicion del nivel <br/> +Conectarse con el tanque                                                  |
 
 ## 4-Relaciones entre los objetos
 Para que el sistema pueda colaborar entre si debe de haber una buena comunicacion entre nuestros objetos, los cuales serian el tanque y los sesnores.
