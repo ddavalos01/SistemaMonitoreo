@@ -36,3 +36,34 @@ sensor registra y proporciona la información correspondiente al tanque al que e
 |--------|--------------------------------------------------------------------------|-------------------------------------------------|-----------------|---------------|
 | Tanque | -Identidicador <br/> -Capacidad maxima <br/> -Estado <br/> -Nivel actual | -String <br/> -Float <br/> -Entero <br/> -Float |
 | Sensor | -Identificador <br/> -Lectura de nivel                                   | -String <br/> -FLoat                            |
+
+## 7-Justificación del diseño
+
+1. **¿Por qué propusieron esas clases?**
+
+   Se propusieron "Tanque" y "Sensor" porque representan los elementos principales del sistema: el tanque almacena y administra el líquido, mientras que el sensor mide su nivel.
+
+2. **¿Cuál es la responsabilidad principal de cada clase?**
+
+   "Tanque" administra su información, nivel y estado de operación. "Sensor" obtiene y proporciona la lectura del nivel.
+
+3. **¿Por qué determinados atributos fueron definidos como privados?**
+
+   Para proteger la información interna de los objetos y evitar modificaciones directas que puedan generar valores incorrectos.
+
+4. **¿Qué información decidieron proporcionar mediante los constructores?**
+
+   Los datos necesarios para crear cada objeto, como el identificador y capacidad del tanque, y el identificador del sensor.
+
+5. **¿Qué objetos se relacionan entre sí y por qué?**
+
+   "Tanque" y "Sensor" se relacionan porque el sensor necesita estar asociado a un tanque para medir su nivel.
+
+6. **¿Qué decisiones tomaron para evitar duplicar responsabilidades?**
+
+   Se decidió que el tanque administre sus datos y operaciones, mientras que el sensor se encargue únicamente de realizar y proporcionar las mediciones.
+
+7. **¿Qué parte del diseño fue discutida entre ambos integrantes y qué decisión tomaron?**
+
+   Se discutió la relación entre el tanque y el sensor, y se decidió separar sus responsabilidades para mantener un diseño más claro.
+
