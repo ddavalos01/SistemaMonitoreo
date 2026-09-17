@@ -20,10 +20,10 @@ El nivel actual de liquido no puede ser menor que cero ni superar la capacidad m
 **Sensor:** Mide y almacena informacion sobre el nivel actual del tanque. Debe estar enlazado con el tanque del cual mide el nivel, y poder mandarle esta informacion.
 
 ## 3-Estado y comportamiento
-| Objeto propuesto | Responsabilidad                                                         | Informacion a conservar                                                                          | Comportamiento a realizar                                                                                                                             |
-|------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tanque           | El tanque debe de permitir conocer el nivel actual                      | +Identificador del tanque <br/> +Capacidad máxima <br/> +Nivel actual <br/> +Estado de operación | +Consultar el nivel actual <br> +Consultar el porcentaje de llenado <br> +Consultar el estado <br> +Llenar y vaciar el tanque <br> +Detener el tanque |
-| Sensor           | Los sesnores deben ser capaces de realizar las mediciones correctamente | +Identificador del sensor <br> +Lectura del nivel                                                | +Realizar la medición del nivel <br> +Proporcionar la lectura obtenida                                                                                |
+| Objeto propuesto | Responsabilidad                                                        | Informacion a conservar                                                                          | Comportamiento a realizar                                                                                                                             |
+|------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Tanque           | El tanque debe de permitir conocer el nivel actual                     | +Identificador del tanque <br/> +Capacidad máxima <br/> +Nivel actual <br/> +Estado de operación | +Consultar el nivel actual <br> +Consultar el porcentaje de llenado <br> +Consultar el estado <br> +Llenar y vaciar el tanque <br> +Detener el tanque |
+| Sensor           | Los sensores deben ser capaces de realizar las mediciones correctamente | +Identificador del sensor <br> +Lectura del nivel                                                | +Realizar la medición del nivel <br> +Proporcionar la lectura obtenida                                                                                |
 
 ## 4-Relaciones entre los objetos
 El objeto Tanque se relaciona con el objeto Sensor, ya que cada sensor se encuentra asociado a un 
@@ -32,10 +32,34 @@ sensor registra y proporciona la información correspondiente al tanque al que e
 # Fase 3
 
 ## 5-Diseño de clases
-| Clase  | Atributos propuestos                                                     | Tipo de dato                                    | Metodos propuetos            | Responsabilidad     |
-|--------|--------------------------------------------------------------------------|-------------------------------------------------|-----------------|---------------|
-| Tanque | -Identidicador <br/> -Capacidad maxima <br/> -Estado <br/> -Nivel actual | -private String <br/> -private Float <br/> -private Entero <br/> -private Float | getID() <br/> getLevel() <br/> getState() <br/> llenarTanque() <br/> vaciarTanque() <br/> detenerTanque() <br/> getCapacidadMax() <br/> getNivelPorcentaje() <br/> getResumen() | -Devolver el identificador del tanque <br/> -Devolver nivel actual del tanque <br/> -Devolver estado actual <br/> -Cambiar estado a llenando, haciendo que el nivel suba <br/> -Cambiar estado a vaciando, haciendo que el nivel baje <br/> -Cambiar estado a detenido, haciendo que el nivel se mantenga <br/> -Devolver capacidad maxima del tanque <br/> -Devolver porcentaje de llenado <br/> -Mostrar resumen actual del tanque |
-| Sensor | -Identificador <br/> -Lectura de nivel                                   | -private String <br/> -private Float                            | getID() <br/> getLectura() | -Devolver identificador del sensor <br/> -Devolver lectura actual del sensor |
+| Clase      | Atributos propuestos                                                     | Tipo de dato                                                                   | Metodos propuetos            | Responsabilidad     |
+|------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------|-----------------|---------------|
+| **Tanque** | -Identidicador <br/> -Capacidad maxima <br/> -Estado <br/> -Nivel actual | private String <br/> -private Float <br/> -private Entero <br/> -private Float | getID() <br/> getLevel() <br/> getState() <br/> llenarTanque() <br/> vaciarTanque() <br/> detenerTanque() <br/> getCapacidadMax() <br/> getNivelPorcentaje() <br/> getResumen() | -Devolver el identificador del tanque <br/> -Devolver nivel actual del tanque <br/> -Devolver estado actual <br/> -Cambiar estado a llenando, haciendo que el nivel suba <br/> -Cambiar estado a vaciando, haciendo que el nivel baje <br/> -Cambiar estado a detenido, haciendo que el nivel se mantenga <br/> -Devolver capacidad maxima del tanque <br/> -Devolver porcentaje de llenado <br/> -Mostrar resumen actual del tanque |
+| **Sensor** | -Identificador <br/> -Lectura de nivel                                   | -private String <br/> -private Float                                           | getID() <br/> getLectura() | -Devolver identificador del sensor <br/> -Devolver lectura actual del sensor |
 
 ## 6-Diagrama UML inicial
 <img width="1536" height="1024" alt="uml-inicial" src="https://github.com/user-attachments/assets/8428e19c-5609-41be-a381-e181cf16b823" />
+
+## 7-Justificación del diseño
+
+1. **¿Por qué propusieron esas clases?**
+   Se propusieron "Tanque" y "Sensor" porque representan los elementos principales del sistema: el tanque almacena y administra el líquido, mientras que el sensor mide su nivel.
+
+2. **¿Cuál es la responsabilidad principal de cada clase?**
+   "Tanque" administra su información, nivel y estado de operación. "Sensor" obtiene y proporciona la lectura del nivel.
+
+3. **¿Por qué determinados atributos fueron definidos como privados?**
+   Para proteger la información interna de los objetos y evitar modificaciones directas que puedan generar valores incorrectos.
+
+4. **¿Qué información decidieron proporcionar mediante los constructores?**
+   Los datos necesarios para crear cada objeto, como el identificador y capacidad del tanque, y el identificador del sensor.
+
+5. **¿Qué objetos se relacionan entre sí y por qué?**
+   "Tanque" y "Sensor" se relacionan porque el sensor necesita estar asociado a un tanque para medir su nivel.
+
+6. **¿Qué decisiones tomaron para evitar duplicar responsabilidades?**
+   Se decidió que el tanque administre sus datos y operaciones, mientras que el sensor se encargue únicamente de realizar y proporcionar las mediciones.
+
+7. **¿Qué parte del diseño fue discutida entre ambos integrantes y qué decisión tomaron?**
+   Se discutió la relación entre el tanque y el sensor, y se decidió separar sus responsabilidades para mantener un diseño más claro.
+
