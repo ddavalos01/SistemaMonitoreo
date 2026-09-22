@@ -54,4 +54,23 @@ public class Tanque {
         System.out.println("Porcentaje de llenado: "+(nivelActual/capacidadMax)*100.0+"%");
         System.out.println("Estado actual: "+estado+"\n");
     }
+
+    void controlNivel() {
+        //Control para nivel igual o superior a capacidad maxima
+        if(nivelActual>capacidadMax){
+            while(nivelActual>capacidadMax) {
+                estado = TankState.VACIANDO;
+                nivelActual--;
+            }
+            estado = TankState.DETENIDO;
+        }
+        if(nivelActual==capacidadMax && estado==TankState.LLENANDO){
+            estado = TankState.DETENIDO;
+        }
+        //Control para nivel menor a cero
+        if(nivelActual>=0.0){
+            estado = TankState.DETENIDO;
+            nivelActual = 0.0;
+        }
+    }
 }
