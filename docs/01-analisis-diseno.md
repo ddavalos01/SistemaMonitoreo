@@ -73,3 +73,6 @@ Los valores numéricos pasaron de Float a Double.
 
 ## 9. Diagrama UML final
 ![Diagrama UML final](uml-final.jpg)
+
+## Evidencia de funcionamiento
+![Funcionamiento del programa](evidencia-funcionamiento.png)
