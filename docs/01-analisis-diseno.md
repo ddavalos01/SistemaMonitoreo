@@ -70,3 +70,6 @@ El método getLectura() ya no recibe parámetros, ahora lee el nivel actual del 
 El estado del tanque cambió de entero a TankState (LLENANDO, VACIANDO, DETENIDO), y se agregaron setEstado() y setNivelActual() para modificar valores.
 Los métodos llenarTanque(), vaciarTanque() y detenerTanque() ya no recibenun Float, solo cambian el estado, y se añadió controlNivel() para evitar que el nivel baje de 0.0 o supere la capacidad máxima.
 Los valores numéricos pasaron de Float a Double.
+
+## 9. Diagrama UML final
+![Diagrama UML final](uml-final.jpg)
