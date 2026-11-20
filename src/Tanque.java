@@ -68,7 +68,7 @@ public class Tanque {
             estado = TankState.DETENIDO;
         }
         //Control para nivel menor a cero
-        if(nivelActual<=0.0){
+        if( nivelActual<=0.0 ){
             estado = TankState.DETENIDO;
             nivelActual = 0.0;
         }
