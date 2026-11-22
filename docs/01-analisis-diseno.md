@@ -63,3 +63,16 @@ sensor registra y proporciona la información correspondiente al tanque al que e
 7. **¿Qué parte del diseño fue discutida entre ambos integrantes y qué decisión tomaron?**
    Se discutió la relación entre el tanque y el sensor, y se decidió separar sus responsabilidades para mantener un diseño más claro.
 
+## 8. Cambios realizados al diseño
+Se agregó la variable tanque a la clase SensorNivel para vincularlo directamente con un tanque y vincular la lectura con en nivel.
+El constructor de SensorNivel ahora recibe tanque con el mismo propósito.
+El método getLectura() ya no recibe parámetros, ahora lee el nivel actual del tanque vinculado y devuelve un Double.
+El estado del tanque cambió de entero a TankState (LLENANDO, VACIANDO, DETENIDO), y se agregaron setEstado() y setNivelActual() para modificar valores.
+Los métodos llenarTanque(), vaciarTanque() y detenerTanque() ya no recibenun Float, solo cambian el estado, y se añadió controlNivel() para evitar que el nivel baje de 0.0 o supere la capacidad máxima.
+Los valores numéricos pasaron de Float a Double.
+
+## 9. Diagrama UML final
+![Diagrama UML final](uml-final.jpg)
+
+## Evidencia de funcionamiento
+![Funcionamiento del programa](evidencia-funcionamiento.png)

@@ -1,11 +1,9 @@
 public class SensorNivel {
     private String id;
     private Double lectura;
-    private Tanque tanque;
 
-    SensorNivel(String inputID, Tanque tanque){
+    SensorNivel(String inputID){
         id = inputID;
-        this.tanque = tanque;
         lectura = 0.0;
     }
 
@@ -14,6 +12,6 @@ public class SensorNivel {
     }
 
     Double getLectura(){
-        lectura = tanque.getNivelActual();
-        return lectura; }
+        return lectura;
+    }
 }

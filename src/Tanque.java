@@ -23,8 +23,6 @@ public class Tanque {
         return nivelActual;
     }
 
-    public void setNivelActual(Double nivelActual) { this.nivelActual = nivelActual; }
-
     public TankState getEstado(){
         return estado;
     }
@@ -37,11 +35,13 @@ public class Tanque {
         return (nivelActual/capacidadMax)*100.0;
     }
 
-    public void setEstado(TankState estado) { this.estado = estado; }
+    public void llenarTanque(){
+        estado = TankState.LLENANDO;
+    }
 
-    public void llenarTanque(){ estado = TankState.LLENANDO; }
-
-    public void vaciarTanque(){ estado = TankState.VACIANDO; }
+    public void vaciarTanque(){
+        estado = TankState.VACIANDO;
+    }
 
     public void detenerTanque(){
         estado = TankState.DETENIDO;
@@ -64,15 +64,13 @@ public class Tanque {
             }
             estado = TankState.DETENIDO;
         }
-        if(nivelActual.equals(capacidadMax) && estado==TankState.LLENANDO){
+        if(nivelActual==capacidadMax && estado==TankState.LLENANDO){
             estado = TankState.DETENIDO;
-            System.out.println("Capacidad maxima alcanzada en Tanque-"+id+", llenado detenido.\n");
         }
         //Control para nivel menor a cero
         if( nivelActual<=0.0 ){
             estado = TankState.DETENIDO;
             nivelActual = 0.0;
-            System.out.println("Capacidad minima alcanzada en Tanque-"+id+", vaciado detenido.\n");
         }
     }
 }
